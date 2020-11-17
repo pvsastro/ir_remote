@@ -1,0 +1,95 @@
+
+CFLAGS := -Wall -O2 -Os -std=c99
+
+# Treat all warnings as errors.
+CFLAGS += -Werror
+# Additional warnings not enabled by -Wall.
+CFLAGS += -Wextra
+# Invalid memory access found by pointer bounds checker.
+CFLAGS += -Wchkp
+# Warn about implicit promotion of float to double.
+CFLAGS += -Wdouble-promotion
+# Warn on missing user-supplied include directory.
+CLFAGS += -Wmissing-include-dirs
+# Warn about returning a pointer to a variable that goes out
+# of scope after the function return.
+CFLAGS += -Wno-return-local-addr
+# Warn if function parameters is unused.
+CFLAGS += -Wunused-parameter
+# Warn on using vars without initializing them.
+CFLAGS += -Wuninitialized
+# Warn if floats are used in equality comparisons.
+CFLAGS += -Wfloat-equal
+# Warn whenever a local variable or type declaration shadows
+# another variable, parameter, type or whenever a built-in
+# function is shadowed.
+CFLAGS += -Wshadow
+# Warn on unsafe loop optimizations.
+CFLAGS += -Wunsafe-loop-optimizations
+# Warn about anything that depends on the “size of” a function
+# type or of void.
+CFLAGS += -Wpointer-arith
+# Warn if an undefined identifier is evaluated in an #if
+# directive. Such identifiers are replaced with zero.
+CFLAGS += -Wundef
+# Warn when a function call is cast to a non-matching type.
+CFLAGS += -Wbad-function-cast
+# Warn whenever a pointer is cast so as to remove a type
+# qualifier from the target type.
+CFLAGS += -Wcast-qual
+# Warn whenever a pointer is cast such that the required
+# alignment of the target is increased.
+CFLAGS += -Wcast-align
+# When compiling C, give string constants the type const
+# char[length] so that copying the address of one into a
+# non-const char * pointer produces a warning.
+CFLAGS += -Wwrite-strings
+# Warn for implicit conversions that may alter a value.
+CFLAGS += -Wconversion
+# Warn when the sizeof operator is applied to a parameter
+# that is declared as an array in a function definition.
+CFLAGS += -Wsizeof-array-argument
+# Warn if any functions that return structures or unions
+# are defined or called.
+CFLAGS += -Waggregate-return
+# Warn if a function is declared or defined without
+# specifying the argument types.
+CFLAGS += -Wstrict-prototypes
+# Warn if a global function is defined without a previous
+# prototype declaration.
+CFLAGS += -Wmissing-prototypes
+# Warn if a global function is defined without a previous
+# declaration.
+CFLAGS += -Wmissing-declarations
+# Warn if a structure’s initializer has some fields missing
+# This option does not warn about designated initializers.
+CFLAGS += -Wmissing-field-initializers
+# Warn if anything is declared more than once in the same
+# scope, even in cases where multiple declaration is valid
+# and changes nothing.
+CFLAGS += -Wredundant-decls
+# Warn if an extern declaration is encountered within a
+# function.
+CFLAGS += -Wnested-externs
+# Warn if long long type is used.
+CFLAGS += -Wlong-long
+
+# Additional flags from linux kernel makefile
+CFLAGS += -Werror-implicit-function-declaration
+CFLAGS += -Wno-format-security
+CFLAGS += -fno-strict-aliasing -fno-common -fshort-wchar
+CFLAGS += -Wno-trigraphs
+
+###########################################################
+# Enable these options to look for additional errors or
+# optimization opportunities. These are not enabled by
+# default because they pollute the build output.
+#
+# Warn if padding is included in a structure, either to
+# align an element of the structure or to align the whole
+# structure.
+#CFLAGS += -Wpadded
+#CFLAGS += -pedantic
+###########################################################
+
+
